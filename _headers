@@ -1,0 +1,18 @@
+# Netlify / Cloudflare Pages 会读这个文件。
+# 用自建服务器的话这个文件没用，但放在 dist/ 里也无害。
+
+# Service worker：永远不缓存，否则用户会卡在旧版本。
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/manifest.webmanifest
+  Cache-Control: no-cache
+  Content-Type: application/manifest+json
+
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Frame-Options: SAMEORIGIN

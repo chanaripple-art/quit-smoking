@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>戒烟 · 记录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="description" content="戒烟记录与支持工具：实时戒烟时长、吸烟打卡、烟瘾急救、健康时间线与数据分析。" />
+
+<!-- iOS PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="戒烟" />
+<meta name="theme-color" content="#0A0E14" />
+<link rel="apple-touch-icon" href="./static/icons/apple-touch-icon.png" />
+<link rel="icon" href="./static/icons/favicon-64.png" sizes="64x64" />
+<link rel="manifest" href="./manifest.webmanifest" />
+
+<link rel="stylesheet" href="./static/css/styles.css" />
+</head>
+<body>
+
+<div id="app">
+  <!-- ============ Header ============ -->
+  <header id="appHeader" class="app-header">
+    <div class="header-inner">
+      <h1 id="headerTitle" class="header-title">戒烟</h1>
+      <button id="headerAction" class="header-action" type="button" hidden></button>
+    </div>
+  </header>
+
+  <!-- ============ Views ============ -->
+  <main id="viewRoot" class="view-root" role="main"></main>
+
+  <!-- ============ Tab bar ============ -->
+  <nav id="tabBar" class="tab-bar" role="tablist" aria-label="主导航">
+    <button class="tab-item is-active" data-route="home" role="tab" aria-selected="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 3.6 10.4A1.5 1.5 0 0 0 3 11.5V20a1 1 0 0 0 1 1h5.2v-5.4h5.6V21H20a1 1 0 0 0 1-1v-8.5a1.5 1.5 0 0 0-.6-1.1L12 3.2Z"/></svg>
+      <span>首页</span>
+    </button>
+    <button class="tab-item" data-route="record" role="tab" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm1 9.6 3.3 2a1 1 0 0 1-1 1.7l-3.8-2.3a1 1 0 0 1-.5-.9V7.5a1 1 0 1 1 2 0v5.1Z"/></svg>
+      <span>记录</span>
+    </button>
+    <button class="tab-item" data-route="stats" role="tab" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 20a1 1 0 0 1-1-1v-6a1 1 0 0 1 2 0v6a1 1 0 0 1-1 1Zm5 0a1 1 0 0 1-1-1V4a1 1 0 0 1 2 0v15a1 1 0 0 1-1 1Zm5 0a1 1 0 0 1-1-1v-9a1 1 0 0 1 2 0v9a1 1 0 0 1-1 1Zm5 0a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v11a1 1 0 0 1-1 1Z"/></svg>
+      <span>分析</span>
+    </button>
+    <button class="tab-item" data-route="badges" role="tab" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6 14.6 8l5.9.8-4.3 4.2 1 5.9L12 16.1 6.8 18.9l1-5.9L3.5 8.8 9.4 8 12 2.6Z"/></svg>
+      <span>成就</span>
+    </button>
+    <button class="tab-item" data-route="settings" role="tab" aria-selected="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2Zm9 3.6c0 .6-.06 1.2-.17 1.76l2.02 1.5-1.94 3.36-2.36-.95a8.9 8.9 0 0 1-3.04 1.76L15.1 22h-3.9l-.4-2.5a8.9 8.9 0 0 1-3.05-1.76l-2.36.95L3.45 15.3l2.02-1.5a9.2 9.2 0 0 1 0-3.53l-2.02-1.5 1.94-3.36 2.36.95A8.9 8.9 0 0 1 10.8 4.6L11.2 2h3.9l.4 2.6c1.12.36 2.15.96 3.04 1.76l2.36-.95 1.94 3.36-2.02 1.5c.11.57.17 1.16.17 1.76Z"/></svg>
+      <span>我的</span>
+    </button>
+  </nav>
+
+  <!-- ============ SOS overlay ============ -->
+  <div id="sosOverlay" class="sos-overlay" hidden aria-modal="true" role="dialog" aria-label="烟瘾急救">
+    <div id="sosContent" class="sos-content"></div>
+  </div>
+
+  <!-- ============ Generic sheet ============ -->
+  <div id="sheetOverlay" class="sheet-overlay" hidden>
+    <div id="sheetPanel" class="sheet-panel" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <!-- ============ Toast ============ -->
+  <div id="toast" class="toast" hidden></div>
+</div>
+
+<script type="module" src="./static/js/app.js"></script>
+</body>
+</html>

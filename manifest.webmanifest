@@ -1,0 +1,25 @@
+{
+  "name": "戒烟 · 记录",
+  "short_name": "戒烟",
+  "description": "记录戒烟历程、抵抗烟瘾、追踪健康恢复与省下的钱。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0E14",
+  "theme_color": "#0A0E14",
+  "categories": ["health", "lifestyle", "medical"],
+  "icons": [
+    { "src": "./static/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./static/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./static/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "./static/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "烟瘾急救", "short_name": "急救", "url": "./index.html#/home?action=sos" },
+    { "name": "记录一支烟", "short_name": "打卡", "url": "./index.html#/record?tab=relapse" },
+    { "name": "数据统计", "short_name": "统计", "url": "./index.html#/stats" }
+  ]
+}
